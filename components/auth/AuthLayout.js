@@ -22,21 +22,25 @@ const Logo = styled.Image`
  `;
 
 export default function AuthLayout({ children }) {
+  {/* 키보드 사라짐 */}
   const dismissKeyboard = () => {
      Keyboard.dismiss();
    };
    return (
+     {/* 키보드 아닌 부분 클릭 처리*/},
      <TouchableWithoutFeedback
        style={{ flex: 1 }}
        onPress={dismissKeyboard}
        disabled={Platform.OS === "web"}
      >
        <Container>
+         {/* 키보드 사용 시 가려지는 UI 방지 */}
          <KeyboardAvoidingView
            style={{
             width: "100%",
           }}
           behavior="position"
+          /* 키보드 UI 거리 */
           keyboardVerticalOffset={Platform.OS === "ios" ? 50 : -100}
         >
           <Logo

@@ -8,6 +8,7 @@ const Tabs = createBottomTabNavigator();
 
 export default function LoggedInNav() {
   return (
+    /* 하단탭 */
     <Tabs.Navigator
       tabBarOptions={{
         activeTintColor: "white",
